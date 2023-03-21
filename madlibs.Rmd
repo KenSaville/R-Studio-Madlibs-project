@@ -1,0 +1,96 @@
+---
+title: "Madlibs"
+output: html_document
+date: "2023-03-11"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Let's write a function, using the madlibs game as an example
+
+First let's practice printing things out
+
+```{r}
+print("The animal played with the object in the place")
+
+```
+
+That was easy
+ 
+Now, we want to convert animal, object, and place with variables so we can change what gets printed out. Then we will change the variables to see what happens, then put it all into a function.
+
+```{r}
+animal <- "animal"
+object <- "object"
+place <- "place"
+
+```
+
+To print text and variable together we need to use the paste function.
+
+```{r}
+#first, just paste things together
+
+paste("The", animal, "played with the", object, "in the", place, collapse = " ")
+
+#let's store this sentence in a variable
+
+madlib <- paste("The", animal, "played with the", object, "in the", place, collapse = " ")
+
+#then we can print the variable
+print(madlib)
+```
+
+Now let's change the variables
+
+```{r}
+animal = "dog"
+object = "ball"
+place = "yard"
+
+madlib <- paste("The", animal, "played with the", object, "in the", place, collapse = " ")
+
+print(madlib)
+
+```
+
+Now let's make a function.
+
+Hmm.  I forgot exactly how to write a function R.  SO I googled it.  Here's the basic format:
+
+function_name <- function(parameters){
+  function body 
+}
+
+So our parameters will be the variables, animal, object, and place.  Then when we call the function we can include whatever we want to use for those variables as arguments or parameters supplied to the function.
+
+Let's give it a try
+
+```{r}
+
+mad_function <- function(animal, object, place){
+  paste("The", animal, "played with the", object, "in the", place, collapse = " ")
+}
+
+#voila, function created
+
+```
+
+Now let's call the function
+
+```{r}
+mad_function("dog", "ball", "yard")
+```
+```{r}
+mad_function("Hippo", "volkswagen", "zoo")
+```
+Now you write a new mad_lib function with a different sentence and different variables.
+
+```{r}
+
+mad_function("Ozzie", "rubber fish", "Kitchen")
+
+```
+
